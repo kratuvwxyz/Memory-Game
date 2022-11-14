@@ -1,0 +1,22 @@
+{
+    "version": "....",
+    "name": ".... by Desaign Studio",
+    "launch_path": "./index.html",
+    "description": ".... by Desaign Studio",
+    "icons": {
+        "128": "https://desaign.app/clients/cli/images/1x/black.png"
+    },
+    "developer": {
+        "name": "Kratu Desai",
+        "url": "https://desaigner.info"
+    },
+    "installs_allowed_from": ["*"],
+    "default_locale": "en",
+    "permissions": {},
+    "locales": {
+        "en": {
+            "name": ".... by Desaign Studio",
+            "description": ".... by Desaign Studio"
+        }
+    }
+}
