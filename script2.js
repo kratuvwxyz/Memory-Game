@@ -6,7 +6,7 @@ let comm = [],
     redTimer = null,
     timer = 1000,
     textShow = false,
-    colors = ['primary', 'success', 'danger', 'warning', 'info', 'success', 'primary', 'danger', 'info', 'warning', 'danger', 'info', 'primary', 'success', 'warning'];
+    colors = ['primary', 'success', 'danger', 'warning', 'info', 'success', 'primary', 'danger', 'info', 'warning', 'danger', 'info', 'primary', 'success', 'warning', 'danger'];
 $("#userBox").hide();
 
 // create a game structure for comm and user individually
