@@ -1,13 +1,19 @@
 let comm = [],
-    game = 3,
+    game = 4,
     doWhileY = 0,
     newReset = 0,
     lightTimer = null,
     redTimer = null,
     timer = 1000,
     textShow = false,
-    colors = ['primary', 'success', 'danger', 'warning', 'info', 'success', 'primary', 'danger', 'info', 'warning', 'danger', 'info', 'primary', 'success', 'warning', 'danger'];
-$("#userBox").hide();
+    colors = ['primary', 'success', 'danger', 'warning', 'info','primary', 'info', 'success', 'danger', 'secondary', 'warning', 'primary', 'info', 'danger', 'success', 'secondary', 'warning'];
+
+$(document).ready(() => {
+    let a = $("<div>").attr("id", "commBox").hide();
+    let b = $("<div>").attr("id", "userBox").hide();
+    
+    $("#mainSection").append(a).append(b);
+});
 
 // create a game structure for comm and user individually
 const gameStructure = (x) => {
@@ -17,7 +23,7 @@ const gameStructure = (x) => {
         let ra = $("<div>").addClass("row");
         for (let j = 0; j < x; j++) {
             y++;
-            let ca = $("<button>").attr("id", `id${y}`).addClass(`col btn btn-light btn-${colors[y]} btn-lg py-5 m-2 gameButton border-${colors[y]}`).text(textShow ? y : ` `).attr("value", y);
+            let ca = $("<button>").attr("id", `id${y}`).addClass(`col btn btn-light btn-${colors[y]} btn-lg py-3 m-1 gameButton border-${colors[y]} border-3`).text(textShow ? y : ` `).attr("value", y);
             ra.append(ca);
         }
         $("#commBox").append(ra);
@@ -29,7 +35,7 @@ const gameStructure = (x) => {
         let ra = $("<div>").addClass("row");
         for (let j = 0; j < x; j++) {
             yd++;
-            let ca = $("<button>").attr("id", `idu${yd}`).addClass(`col btn btn-light btn-secondary btn-lg py-5 m-2 gameButton border-${colors[yd]}`).text(textShow ? yd : ` `).attr("value", yd).attr("onclick", "userGenerate(this)").attr("onmousedown", "mouseDown(this)").attr("onmouseup", "mouseUp(this)");
+            let ca = $("<button>").attr("id", `idu${yd}`).addClass(`col btn btn-light btn-secondary btn-lg py-3 m-1 gameButton border-${colors[yd]} border-3`).text(textShow ? yd : ` `).attr("value", yd).attr("onclick", "userGenerate(this)").attr("onmousedown", "mouseDown(this)").attr("onmouseup", "mouseUp(this)");
             ra.append(ca);
         }
         $("#userBox").append(ra);
@@ -92,6 +98,7 @@ let startGame = (x) => {
 };
 
 $("#readyButton").click(() => {
+    $("#commBox").show();
     startGame(game);
     $("#readyButton").hide();
 });

@@ -89,6 +89,23 @@
 
         <!-- Developer CSS -->
         <!-- # -->
+        <style>
+            .supsub {
+                display: inline-block;
+            }
+            
+            .supsub sup,
+            .supsub sub {
+                position: relative;
+                display: block;
+                font-size: .5em;
+                line-height: .5;
+            }
+            
+            .supsub sub {
+                top: .3em;
+            }
+        </style>
 
         <!-- GOOGLE Analytics -->
         <!-- # -->
@@ -99,26 +116,26 @@
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
     </head>
-    <body class="bg-secondary">
+    <body class="bg-white">
         <!-- header -->
+        <nav class="navbar navbar-light bg-light justify-content-justify px-3">
+          <div><span class="navbar-brand mb-0 h1">Memory Game</span> <span class="supsub"><sup>POWERED BY</sup><sub>DESAIGN STUDIO</sub></span></div>
+        </nav>
 
         <!-- switch 4 / 9 -->
         <!-- <span id="id4" value="4" class="btn btn-light">4</span><span id="id9" value="9" class="btn btn-secondary">9</span> -->
 
         <!-- box -->
-        <section>
-            <div id="commBox" class="container"></div>
-            <div id="userBox" class="container"></div>
-        </section>
-
-        <section>
-            <button class="btn btn-danger" id="readyButton">Ready</button>
-        </section>
+        <div class="container-fluid d-flex justify-content-center" style="height: 100vh">
+          <div class="row p-2 section1 my-2 align-items-center" id="mainSection">
+              <button class="btn btn-danger" id="readyButton">Ready</button>
+          </div>
+        </div>
 
         <!-- Footer -->
-        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark mt-5 ps-3">
+        <!-- <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark mt-5 ps-3">
             <a class="navbar-brand" href="https://desaign.app" target="_blank" style="font-size: 1rem !important">POWERED BY <span class="text-warning">DESAIGN.STUDIO</span></a>
-        </nav>
+        </nav> -->
 
         <!-- Developer JavaScripts -->
         <!-- # -->
