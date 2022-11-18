@@ -61,31 +61,27 @@ let mouseUp = (xx) => {
     $(`#idu${xx.value}`).addClass("btn-light");
 }
 
-// alterloop for setTimeout to visible numbers
-let alertLoopTwo = (i) => {
-    
-    if (comm[i]) {
-        $(`#id${comm[i]}`).addClass("btn-light");
-        lightTimer = setTimeout(() => {
-            alertLoopTwo(i + 1);
-        }, timer);
-    }
-if (i === comm.length) {
-    $("#commBox").hide();
-    $("#userBox").show();
-    }
-};
+let rct, act, ft;
+let timeFunction = () => {
+for(let i = 0; i < comm.length; i++) {
+  rct = setTimeout(() => {
+    $(`#id${comm[i]}`).removeClass("btn-light");
+  }, timer*(i+1));
+  act = setTimeout(() => {
+    $(`#id${comm[i]}`).addClass("btn-light");
+  }, timer*(i+2));
+}
+  ft = setTimeout(() => {
+      console.log(comm.length + 1);
 
-let alertLoop = (i) => {
-    
-    if (comm[i]) {
-        alertLoopTwo(0);
-        $(`#id${comm[i]}`).removeClass("btn-light");
-        redTimer = setTimeout(() => {
-            alertLoop(i + 1);
-        }, timer);
-    }
-};
+          $("#commBox").hide();
+          $("#userBox").show();
+          clearTimeout(rct);
+          clearTimeout(act);
+
+  }, timer*(comm.length+1));
+}
+
 
 // show and hide user 
 
@@ -94,7 +90,8 @@ let startGame = (x) => {
     comm.push(Math.floor(Math.random() * (x * x)) + 1);
     gameStructure(x);
     commGenerate(x);
-    setTimeout(() => alertLoop(0), 1000);
+    // setTimeout(() => alertLoop(0), 1000);
+    timeFunction();
 };
 
 $("#readyButton").click(() => {
@@ -105,5 +102,6 @@ $("#readyButton").click(() => {
 
 // user click to create an array
 let userGenerate = (xx) => {
-    comm.length - 1 != newReset ? comm[newReset] == xx.value ? (newReset++) : location.reload() : comm[newReset] == xx.value ? ($("#commBox").show(), $("#userBox").hide(), commGenerate(game), setTimeout(() => alertLoop(0), 500), newReset = 0) : location.reload();
+    clearTimeout(ft);
+    comm.length - 1 != newReset ? comm[newReset] == xx.value ? (newReset++) : location.reload() : comm[newReset] == xx.value ? ($("#commBox").show(), $("#userBox").hide(), commGenerate(game), setTimeout(() => timeFunction(), 500), newReset = 0) : location.reload();
 };
