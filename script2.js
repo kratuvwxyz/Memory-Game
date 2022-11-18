@@ -6,6 +6,8 @@ let comm = [],
     redTimer = null,
     timer = 1000,
     textShow = false,
+    highScore = 0,
+    score = 0,
     colors = ['primary', 'success', 'danger', 'warning', 'info','primary', 'info', 'success', 'danger', 'secondary', 'warning', 'primary', 'info', 'danger', 'success', 'secondary', 'warning'];
 
 $(document).ready(() => {
@@ -13,6 +15,12 @@ $(document).ready(() => {
     let b = $("<div>").attr("id", "userBox").hide();
     
     $("#mainSection").append(a).append(b);
+    if(localStorage.getItem("highScore_Memory-Game") != null) {
+      highScore = localStorage.getItem("highScore_Memory-Game");
+    } else {
+      localStorage.setItem("highScore_Memory-Game", highScore);
+    }
+    $("#highScore").text(highScore);
 });
 
 // create a game structure for comm and user individually
@@ -49,7 +57,6 @@ let commGenerate = (x) => {
         doWhileY = Math.floor(Math.random() * (x * x));
     } while (comm[comm.length - 1] == doWhileY + 1);
     comm.push(doWhileY + 1);
-    console.log(comm);
 };
 
 // mousedown and mouseup
@@ -72,7 +79,6 @@ for(let i = 0; i < comm.length; i++) {
   }, timer*(i+2));
 }
   ft = setTimeout(() => {
-      console.log(comm.length + 1);
 
           $("#commBox").hide();
           $("#userBox").show();
@@ -103,5 +109,6 @@ $("#readyButton").click(() => {
 // user click to create an array
 let userGenerate = (xx) => {
     clearTimeout(ft);
-    comm.length - 1 != newReset ? comm[newReset] == xx.value ? (newReset++) : location.reload() : comm[newReset] == xx.value ? ($("#commBox").show(), $("#userBox").hide(), commGenerate(game), setTimeout(() => timeFunction(), 500), newReset = 0) : location.reload();
+    let a = localStorage.getItem("highScore_Memory-Game");
+    comm.length - 1 != newReset ? comm[newReset] == xx.value ? (newReset++) : location.reload() : comm[newReset] == xx.value ? ($("#commBox").show(), $("#userBox").hide(), commGenerate(game), setTimeout(() => timeFunction(), 500), newReset = 0, score++, a < score ? (localStorage.setItem("highScore_Memory-Game", highScore), highScore = score) : console.log("nothing"), $("#highScore").text(highScore)) : location.reload();
 };
