@@ -1,30 +1,8 @@
-## .... by Desaign Studio
+## Memory Game by Desaign Studio
 
-Descriptions
+How good is your memory? How good are you with keeping yourself entertained? This game helps you to grow your memory by challenge yourself. Can you remember the flashing button sequences and repeat them correctly? as you get better the level of difficulty increases. Play 2 x 2, 3 x 3, or 4 x 4. This game is perfect for road trips, and waiting rooms. Scan QR code to start the game on your phone.
 
-<img src="./SS1.png" alt="Screen Shot" width="500">
-
-### Version
-
-- **0000000000**
-☐ Last Update
-
-### Framework
-
-- 
-
-### Built With
-
-- 
-
-### Software
-
-- Visual Studio Code Editor
-- Github for versioning
-
-### Credits
-
-- 
+<img src="./SS1.png" alt="Screen Shot" width="300">
 
 ### CONTRIBUTE
 
@@ -32,15 +10,11 @@ Descriptions
 
 ### LICENSE
 
-- [MIT](https://github.com/kratuvwxyz/LICENSE) © 2021 Kratu Desai, DESAIGN LLC.
-
-### Moving Forward
-
-- 
+- [MIT](https://github.com/kratuvwxyz/LICENSE) © 2022, DESAIGN LLC.
 
 ## CONTACT
 
-Thank you for your time and consideration. My mantra is simple, *chase perfection to catch excellence*. I hope you enjoy my work. **I'd love to hear from you.** Please email me at <a href="mailto:github@desaign.studio?Subject=Message from Github">github@desaign.studio</a>.
+Thank you for your time and consideration. We are <a href="https://desaign.app">DESAIGN.STUDIO</a>. Our mantra is simple, *chase perfection to catch excellence*. We hope you enjoy our work. **We'd love to hear from you to chase perfection.** Please email us with your thoughts and guidance at <a href="mailto:github@desaign.studio?Subject=Message from Github">github@desaign.studio</a>.
 
 <hr/>
 
