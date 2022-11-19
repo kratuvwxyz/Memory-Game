@@ -1,5 +1,5 @@
 let comm = [],
-    game = 4,
+    game,
     doWhileY = 0,
     newReset = 0,
     lightTimer = null,
@@ -9,6 +9,14 @@ let comm = [],
     highScore = 0,
     score = 0,
     colors = ["primary", "success", "danger", "warning", "info", "primary", "info", "success", "danger", "secondary", "warning", "primary", "info", "danger", "success", "secondary", "warning"];
+$("#highScoreValue").hide();
+$("#readyButton").hide();
+
+let boxValueFunction = (x) => {
+    game = x.value;
+    $("#readyButton").show();
+    $("#boxPattern").hide();
+};
 $(document).ready(() => {
     let e = $("<div>").attr("id", "commBox").hide(),
         t = $("<div>").attr("id", "userBox").hide();
@@ -80,6 +88,7 @@ let rct,
     },
     startGame = (e) => {
         comm.push(Math.floor(Math.random() * (e * e)) + 1), gameStructure(e), commGenerate(e), timeFunction();
+        $("#highScoreValue").show();
     };
 $("#readyButton").click(() => {
     $("#commBox").show(), startGame(game), $("#readyButton").hide();
@@ -100,6 +109,6 @@ let userGenerate = (e) => {
           score++,
           t < score && (localStorage.setItem("highScore_Memory-Game", score), (highScore = score)),
           $("#highScore").text(highScore),
-          timer = timer-20, console.log(timer))
+          (timer = timer - 20))
         : location.reload();
 };

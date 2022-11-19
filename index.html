@@ -130,18 +130,23 @@
             <div>
                 <span class="navbar-brand mb-0 h1">Memory Game</span> <span class="supsub"><sup>POWERED BY</sup><sub>DESAIGN STUDIO</sub></span>
             </div>
-            <div>
+            <div id="highScoreValue">
                 <span class="supsub"><sup>&nbsp;&nbsp;HIGH</sup><sub>SCORE</sub></span
                 >&nbsp;<span class="navbar-brand mb-0 h1" id="highScore">0</span>
             </div>
         </nav>
-
+        
         <!-- switch 4 / 9 -->
         <!-- <span id="id4" value="4" class="btn btn-light">4</span><span id="id9" value="9" class="btn btn-secondary">9</span> -->
-
+        
         <!-- box -->
         <div class="container-fluid d-flex justify-content-center">
             <div class="row p-2 section1 my-2 align-items-center" id="mainSection" style="height: 80vh">
+                <div id="boxPattern">
+                    <button class="btn btn-light btn-small boxValue" value="2" onclick="boxValueFunction(this)">2 x 2</button>
+                    <button class="btn btn-light btn-small boxValue" value="3" onclick="boxValueFunction(this)">3 x 3</button>
+                    <button class="btn btn-light btn-small boxValue" value="4" onclick="boxValueFunction(this)">4 x 4</button>
+                </div>
                 <button class="btn btn-danger" id="readyButton">Ready</button>
             </div>
         </div>
